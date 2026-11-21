@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 const config = require('../config');
 const AppError = require('../utils/AppError');
-const { User, Provider } = require('../models');
+const { User } = require('../models');
 
 function signToken(userId) {
   return jwt.sign({ id: String(userId) }, config.jwt.secret, { expiresIn: config.jwt.expiresIn });
@@ -50,6 +50,7 @@ const authorize =
 const loadProvider =
   ({ requireActive = true } = {}) =>
   async (req, _res, next) => {
+    const { Provider } = require('../models');
     const provider = await Provider.findOne({ userId: req.user._id });
     if (!provider) throw AppError.forbidden('Provider profile not found');
     if (requireActive && provider.status !== 'active') {
