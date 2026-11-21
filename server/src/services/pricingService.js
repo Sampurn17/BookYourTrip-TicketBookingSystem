@@ -3,8 +3,7 @@
  *
  * Each rule is an independent strategy that returns a multiplicative factor
  * and a human-readable label. The engine multiplies the factors, clamps the
- * result and returns a full breakdown so the UI (and the AI agent) can
- * explain *why* a fare is what it is.
+ * result and returns a full breakdown so the UI can explain *why* a fare is what it is.
  */
 const { dayOfWeek, departureDateTime, hoursUntil } = require('../utils/dates');
 

@@ -38,19 +38,6 @@ async function authenticate(req, _res, next) {
   next();
 }
 
-/** Attaches req.user when a valid token is present; anonymous otherwise (used by the AI agent). */
-async function optionalAuth(req, _res, next) {
-  const token = extractToken(req);
-  if (token) {
-    try {
-      req.user = await resolveUser(token);
-    } catch {
-      req.user = undefined;
-    }
-  }
-  next();
-}
-
 const authorize =
   (...roles) =>
   (req, _res, next) => {
@@ -72,4 +59,4 @@ const loadProvider =
     next();
   };
 
-module.exports = { signToken, authenticate, optionalAuth, authorize, loadProvider };
+module.exports = { signToken, authenticate, authorize, loadProvider };

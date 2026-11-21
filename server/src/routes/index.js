@@ -1,7 +1,7 @@
 const express = require('express');
 const s = require('../validators/schemas');
 const { validate } = require('../middleware/validate');
-const { authenticate, optionalAuth, authorize, loadProvider } = require('../middleware/auth');
+const { authenticate, authorize, loadProvider } = require('../middleware/auth');
 const { authLimiter } = require('../middleware/rateLimit');
 const auth = require('../controllers/authController');
 const trips = require('../controllers/tripController');

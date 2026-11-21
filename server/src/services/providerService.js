@@ -138,7 +138,7 @@ async function dashboardStats(provider, days = 7, now = new Date()) {
 
 /**
  * Per-trip performance + rule-based pricing recommendation.
- * Consumed by the provider dashboard and by the AI agent's insight tool.
+ * Consumed by the provider dashboard.
  */
 async function tripPerformance(provider, now = new Date()) {
   const { trips, invByKey } = await upcomingOccupancy(provider._id, 7, now);

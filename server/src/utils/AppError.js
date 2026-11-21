@@ -1,6 +1,6 @@
 /**
  * Operational error with an HTTP status and a stable machine-readable code
- * that the frontend (and the AI agent) can branch on.
+ * that the frontend can branch on.
  */
 class AppError extends Error {
   constructor(message, statusCode = 400, code = 'BAD_REQUEST', details) {
