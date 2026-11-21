@@ -292,12 +292,6 @@ export default function MyTrips() {
     setBookings(null);
     load();
   }, [load]);
-
-  useEffect(() => {
-    window.addEventListener('byt:bookings-changed', load);
-    return () => window.removeEventListener('byt:bookings-changed', load);
-  }, [load]);
-
   const done = () => {
     setModal(null);
     load();

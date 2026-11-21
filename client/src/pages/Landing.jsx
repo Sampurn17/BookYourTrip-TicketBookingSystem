@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FiShield, FiTrendingUp, FiMessageCircle } from 'react-icons/fi';
+import { FiShield, FiTrendingUp } from 'react-icons/fi';
 import SearchPanel from '../components/SearchPanel';
 import { api } from '../api/client';
 import { ModeIcon } from '../utils/modes';
@@ -94,17 +94,11 @@ export default function Landing() {
             </h3>
             <p className="muted">Prices move with demand and how soon you travel. Every fare shows why it is higher or lower.</p>
           </div>
-          <div>
-            <h3>
-              <FiMessageCircle /> Ask Yatra
-            </h3>
-            <p className="muted">Our assistant searches, starts bookings and handles changes. It always asks before cancelling anything.</p>
-          </div>
         </section>
       </div>
       <footer className="footer">
         <div className="container spread">
-          <span>BookYourTrip, CS455 project</span>
+          <span>BookYourTrip</span>
           <span>
             Run a bus, train or airline? <Link to="/signup?role=provider">List your trips</Link>
           </span>

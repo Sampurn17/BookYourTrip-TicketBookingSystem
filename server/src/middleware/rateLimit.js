@@ -17,5 +17,4 @@ function makeLimiter(max, message) {
 module.exports = {
   apiLimiter: makeLimiter(config.rateLimit.max, 'Too many requests, please slow down.'),
   authLimiter: makeLimiter(config.rateLimit.authMax, 'Too many login attempts, try again in a minute.'),
-  agentLimiter: makeLimiter(config.rateLimit.agentMax, 'The assistant is busy, try again in a minute.'),
 };

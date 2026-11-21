@@ -2,13 +2,12 @@ const express = require('express');
 const s = require('../validators/schemas');
 const { validate } = require('../middleware/validate');
 const { authenticate, optionalAuth, authorize, loadProvider } = require('../middleware/auth');
-const { authLimiter, agentLimiter } = require('../middleware/rateLimit');
+const { authLimiter } = require('../middleware/rateLimit');
 const auth = require('../controllers/authController');
 const trips = require('../controllers/tripController');
 const bookings = require('../controllers/bookingController');
 const provider = require('../controllers/providerController');
 const admin = require('../controllers/adminController');
-const agent = require('../controllers/agentController');
 
 const router = express.Router();
 const idParams = { params: s.idParam };
@@ -60,8 +59,5 @@ router.patch('/admin/providers/:id/reactivate', ...adminOnly, validate({ params:
 router.patch('/admin/providers/:id/discontinue', ...adminOnly, validate({ params: s.idParam, body: s.adminReason }), admin.discontinue);
 router.get('/admin/stats', ...adminOnly, admin.stats);
 router.get('/admin/integrity', ...adminOnly, admin.integrity);
-
-// ---------- AI agent ----------
-router.post('/agent/chat', agentLimiter, optionalAuth, validate({ body: s.agentChat }), agent.chat);
 
 module.exports = router;

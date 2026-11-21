@@ -1,7 +1,7 @@
 {
   "name": "bookyourtrip-server",
   "version": "2.0.0",
-  "description": "BookYourTrip API - concurrency-safe ticket booking with an agentic AI assistant",
+  "description": "BookYourTrip API - concurrency-safe ticket booking",
   "private": true,
   "main": "src/server.js",
   "engines": {
@@ -28,7 +28,6 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.18.1",
     "morgan": "^1.10.1",
-    "openai": "^6.3.0",
     "zod": "^3.25.76"
   },
   "devDependencies": {

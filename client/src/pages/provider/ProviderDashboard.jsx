@@ -121,7 +121,6 @@ export default function ProviderDashboard() {
           <section>
             <div className="spread" style={{ marginBottom: 12 }}>
               <h2 style={{ margin: 0 }}>Fare advice</h2>
-              <span className="muted">Ask Yatra for a written summary</span>
             </div>
             {perf?.length === 0 ? (
               <Empty title="No active trips" action={<Link className="btn" to="/provider/trips">Add your first trip</Link>} />

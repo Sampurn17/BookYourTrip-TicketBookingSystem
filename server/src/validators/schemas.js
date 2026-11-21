@@ -162,19 +162,6 @@ const adminProviderQuery = z.object({
 });
 const adminReason = z.object({ reason: z.string().trim().max(300).optional() });
 
-// ---------- agent ----------
-const agentChat = z.object({
-  messages: z
-    .array(
-      z.object({
-        role: z.enum(['user', 'assistant']),
-        content: z.string().max(2000),
-      }),
-    )
-    .min(1)
-    .max(30),
-});
-
 module.exports = {
   objectId,
   idParam,
@@ -195,5 +182,4 @@ module.exports = {
   statsQuery,
   adminProviderQuery,
   adminReason,
-  agentChat,
 };

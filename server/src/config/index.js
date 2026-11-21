@@ -34,13 +34,6 @@ const config = Object.freeze({
     windowMs: 60 * 1000,
     max: int(process.env.RATE_LIMIT_MAX, 600),
     authMax: int(process.env.RATE_LIMIT_AUTH_MAX, 30),
-    agentMax: int(process.env.RATE_LIMIT_AGENT_MAX, 30),
-  },
-  llm: {
-    apiKey: process.env.OPENAI_API_KEY || '',
-    model: process.env.OPENAI_MODEL || 'gpt-4o-mini',
-    baseURL: process.env.OPENAI_BASE_URL || undefined,
-    maxSteps: int(process.env.AGENT_MAX_STEPS, 5),
   },
   business: {
     /** All schedule times are interpreted in this fixed offset (India Standard Time). */

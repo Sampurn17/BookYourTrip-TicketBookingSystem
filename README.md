@@ -1,6 +1,6 @@
 # BookYourTrip
 
-Ticket booking for buses, trains and flights: customers, operators (providers) and admins, with seat-level booking that can't be double-sold, dynamic pricing and a tool-calling AI assistant.
+Ticket booking for buses, trains and flights: customers, operators (providers) and admins, with seat-level booking that can't be double-sold and dynamic pricing.
 
 ```
 server/   Express 5 + MongoDB (Mongoose) API, Jest tests, seed / load / race scripts
@@ -14,7 +14,7 @@ Requires Node 18+ and a MongoDB URI (Atlas free tier recommended: it is a replic
 ```bash
 # API
 cd server
-cp .env.example .env          # set MONGO_URI, JWT_SECRET, optionally OPENAI_API_KEY
+cp .env.example .env          # set MONGO_URI, JWT_SECRET
 npm install
 npm run seed                  # demo data + accounts (printed at the end)
 npm run dev                   # http://localhost:5000
@@ -26,8 +26,6 @@ npm run dev                   # http://localhost:5173 (proxies /api to :5000)
 ```
 
 Demo logins after seeding: `aarav@example.com` / `Password@123` (customer), `zing@bookyourtrip.com` / `Password@123` (operator), `admin@bookyourtrip.com` / `Admin@123` (admin).
-
-Without `OPENAI_API_KEY` the assistant runs in offline mode (deterministic intent router driving the same tools). Any OpenAI-compatible endpoint works via `OPENAI_BASE_URL` + `OPENAI_MODEL`.
 
 ## Tests
 
